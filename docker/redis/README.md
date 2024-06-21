@@ -17,7 +17,7 @@ docker run --name redis7 -p 6379:6379 -v ***/conf/redis.conf:/etc/redis/redis.co
 以`docker compose` 运行容器，创建`docker-compose.yml`文件，写入以下内容
 
 ```yaml
-version: "3.8"
+version: "3"
 
 services:
   redis:

@@ -16,7 +16,7 @@ docker run --name mysql8 -p 3306:3306 -v ***/conf/my.cnf:/etc/mysql/my.cnf -v **
 以`docker compose` 运行容器，创建`docker-compose.yml`文件，写入以下内容
 
 ```yaml
-version: "3.8"
+version: "3"
 
 services:
   redis:
