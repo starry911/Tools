@@ -7,3 +7,5 @@
 [docker 部署 Redis](./docker/redis/README.md)
 
 [docker 部署 PHP8+Nginx](./docker/php+nginx/README.md)
+
+[docker 部署 elasticsearch + kibana + ik分词器](./docker/elasticsearch/README.md)
