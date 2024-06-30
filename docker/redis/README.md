@@ -26,10 +26,10 @@ services:
     restart: always
     ports:
       - "6379:6379"
-    command: redis-server /usr/local/etc/redis/redis.conf
+    command: redis-server /etc/redis/redis.conf
     volumes:
       - ./data:/data
-      - ./conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./conf/redis.conf:/etc/redis/redis.conf
 ```
 
 这是以配置文件去启动redis

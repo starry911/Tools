@@ -19,7 +19,7 @@ docker run --name mysql8 -p 3306:3306 -v ***/conf/my.cnf:/etc/mysql/my.cnf -v **
 version: "3"
 
 services:
-  redis:
+  mysql:
     image: mysql:8.0.20
     container_name: mysql8
     restart: always
@@ -27,8 +27,9 @@ services:
       - "3306:3306"
     entrypoint:
       - MYSQL_ROOT_PASSWORD=123456
+      - TZ=Asia/Shanghai
     volumes:
-      - ./conf/my.cnf:/etc/mysql/my.cnf
+      - ./conf:/etc/mysql/conf.d
       - ./data:/var/lib/mysql
       - ./logs:/var/log/mysql
 ```
