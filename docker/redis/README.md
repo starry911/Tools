@@ -11,7 +11,7 @@ docker pull redis:7.2.5
 
 以`docker`命令运行容器
 ```shell
-docker run --name redis7 -p 6379:6379 -v ***/conf/redis.conf:/etc/redis/redis.conf -v ***/data:/data -d redis:7.2.5 redis-server /usr/local/etc/redis/redis.conf
+docker run --name redis7 -p 6379:6379 -v ***/conf/redis.conf:/etc/redis/redis.conf -v ***/data:/data -d redis:7.2.5 redis-server /etc/redis/redis.conf
 ```
 
 以`docker compose` 运行容器，创建`docker-compose.yml`文件，写入以下内容
