@@ -3,14 +3,14 @@
 先下载mysql镜像
 
 ```shell
-docker pull mysql:8.0.20
+docker pull mysql:8.0.40
 ```
 
 同级目录下创建，`./conf.d`,`./data`和`logs`目录，将容器的数据和日志挂载到宿主机，然后启动容器
 
 以`docker`命令运行容器
 ```shell
-docker run --name mysql8 -p 3306:3306 -v ***/conf.d:/etc/mysql/conf.d -v ***/data:/var/lib/mysql -v ***/logs/:/var/log/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.0.20
+docker run --name mysql8 -p 3306:3306 -v ***/conf.d:/etc/mysql/conf.d -v ***/data:/var/lib/mysql -v ***/logs/:/var/log/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.0.40
 ```
 
 以`docker compose` 运行容器，创建`docker-compose.yml`文件，写入以下内容
@@ -20,14 +20,14 @@ version: "3"
 
 services:
   mysql:
-    image: mysql:8.0.20
+    image: mysql:8.0.40
     container_name: mysql8
     restart: always
     ports:
       - "3306:3306"
-    entrypoint:
-      - MYSQL_ROOT_PASSWORD=123456
-      - TZ=Asia/Shanghai
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      TZ: Asia/Shanghai
     volumes:
       - ./conf.d:/etc/mysql/conf.d
       - ./data:/var/lib/mysql
